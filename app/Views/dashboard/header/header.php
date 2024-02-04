@@ -28,8 +28,7 @@ foreach ($session->user_details['user_roles'] as $role) {
             <ul class="dropdown-menu dropdown-menu-dark text-white shadow p-2 w-25" aria-labelledby="dropdownmessage1">
                 <?php foreach ($messages as $value) {?>
                 <li class="message" mid="<?=$value->id?>">
-                    <a class="dropdown-item"
-                        style="color: white;">
+                    <a class="dropdown-item" style="color: white;">
                         <div class="row ">
                             <div style="font-size:20px " class="hideextra" title="<?=$value->msg?>"><?=$value->msg?>
                             </div>

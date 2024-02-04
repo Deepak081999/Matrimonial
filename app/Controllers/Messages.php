@@ -57,7 +57,7 @@ class Messages extends BaseController
         $res = $this->memberModel->getMessages();
         $records = $this->memberModel->getCountNotification($id);
         $data = [];
-        prd($res);
+        // prd($res);
         foreach ($res as $val) {
             $name = $val->first_name . " " . $val->middle_name . "" . $val->last_name;
             $data[] = [
