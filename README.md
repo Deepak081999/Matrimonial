@@ -40,9 +40,10 @@ Tools used: PHP7, HTML5, JavaScript (JQuery, Bootstrap), CSS3, MySQL, CodeIgnite
 ### Dhashbord (Moderatros)
 ![Dhashbord3](screenshots/dhashbord3.jpg)
 
-### Profile(Edit profile)
+### Profile
 ![Profile](screenshots/profile1.jpg)
 
+### Edit profile
 ![Edit Profile](screenshots/edit_profile.jpg)
 
 

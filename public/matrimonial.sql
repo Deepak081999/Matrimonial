@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2024 at 11:32 AM
+-- Generation Time: Feb 04, 2024 at 12:50 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -826,7 +826,8 @@ INSERT INTO `favorite_members` (`id`, `user_id`, `favorite_user_id`) VALUES
 (36, 1, 4),
 (37, 1, 2),
 (40, 1, 5),
-(42, 1, 1);
+(42, 1, 1),
+(43, 1, 30);
 
 -- --------------------------------------------------------
 
@@ -3368,17 +3369,18 @@ CREATE TABLE `matrimonial_msgs` (
   `msg` text NOT NULL,
   `created_at` date NOT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `check_msg` int(5) NOT NULL
+  `check_msg` int(5) NOT NULL,
+  `deleted` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `matrimonial_msgs`
 --
 
-INSERT INTO `matrimonial_msgs` (`id`, `user_id`, `contact_user_id`, `msg`, `created_at`, `time`, `check_msg`) VALUES
-(1, 6, 35, 'hey bsdsjdbfjhdsbjhdcon=oansdjfhalsdhfkasdhkfhaskudfd\n', '2022-01-06', '2022-01-31 04:57:58', 0),
-(2, 1, 35, 'xjbbdfbsudfudguugdgdsghjdshj', '2022-01-29', '2022-01-29 05:11:11', 0),
-(3, 5, 35, 'sdbfjhbasdfbsdjhdsb\nphone no.: 9782447604', '2022-01-29', '2022-01-29 08:48:12', 0);
+INSERT INTO `matrimonial_msgs` (`id`, `user_id`, `contact_user_id`, `msg`, `created_at`, `time`, `check_msg`, `deleted`) VALUES
+(1, 35, 1, 'hey bsdsjdbfjhdsbjhdcon=oansdjfhalsdhfkasdhkfhaskudfd\n', '2022-01-06', '2024-02-04 11:13:27', 1, '2024-02-04'),
+(2, 35, 1, 'xjbbdfbsudfudguugdgdsghjdshj', '2022-01-29', '2024-02-04 11:06:05', 0, NULL),
+(3, 4, 1, 'sdbfjhbasdfbsdjhdsb\nphone no.: 9782447604', '2022-01-29', '2024-02-04 11:14:07', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -3435,7 +3437,7 @@ CREATE TABLE `members_profile` (
 --
 
 INSERT INTO `members_profile` (`id`, `user_id`, `title_name`, `first_name`, `middle_name`, `last_name`, `phone`, `email`, `father_name`, `mother_name`, `husband_name`, `marital_status`, `self_gotra_id`, `nani_gotra_id`, `mother_gotra_id`, `dadi_gotra_id`, `availableformarriage`, `is_manglik`, `gender`, `height`, `skin`, `pob`, `dob`, `blood_group`, `education`, `qualification_id`, `occupation_id`, `occupation_detail`, `father_occupation`, `family_income`, `self_income`, `profile_photo`, `address`, `tahsil`, `district_id`, `state_id`, `created_at`, `deleted_at`, `updated_at`, `sabha_members`) VALUES
-(1, 1, '', 'Admin', 'Saini', 'Jangid', 9069089045, '', 'Manilal Jangid', 'Santosh Jangid', '', 'Single', 2, 3, 6, 6, 0, 0, 'Male', 45, 'Wheatish', 'Sdf', '1990-01-14', '', 'Graduate', 4, 3, 'Developer', '', NULL, NULL, '1707032807_9572a9a47e0d68f59465.png', 'Parsrampura', 'Nawalgarh', 254, 15, '2022-01-07', NULL, '2024-02-04', 0),
+(1, 1, '', 'Admin', 'Saini', 'Jangid', 9069089045, '', 'Manilal Jangid', 'Santosh Jangid', '', 'Single', 2, 3, 6, 6, 0, 0, 'Male', 45, 'Wheatish', 'Sdf', '1990-01-14', '', 'Graduate', 4, 3, 'Developer', '', NULL, NULL, '1707043912_21db864d08e59b266480.jpg', 'Parsrampura', 'Nawalgarh', 254, 15, '2022-01-07', NULL, '2024-02-04', 0),
 (2, 2, '', 'Sulochana', '', 'saini', NULL, '', '', '', 'Radheshyam', 'Married', 184, NULL, 1939, 0, 0, 0, 'Female', NULL, '', '', '1963-07-01', '', 'PRIMARY', 2, 96, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 1),
 (3, 3, '', 'Naveen', '', 'Jangid', NULL, '', 'Radheshyam', '', '', 'Married', 1547, 1939, 184, 925, 0, 0, 'Male', NULL, '', '', '1980-10-27', '', 'PG', 3, 97, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 0),
 (4, 4, '', 'Ajay', '', 'Jangid', NULL, '', 'Radheshyam', '', '', 'Married', 1547, 1939, 184, 925, 0, 0, 'Male', NULL, '', '', '1981-12-15', '', 'GRADUATE', 4, 97, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 1),
@@ -3713,7 +3715,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `phone`, `password`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'admin', 'Jangid', 9602065385, 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, '2024-02-04', NULL),
+(1, 'Admin', 'Jangid', 9602065385, 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, '2024-02-04', NULL),
 (2, 'Sulochana', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
 (3, 'Naveen', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
 (4, 'Ajay', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
@@ -4015,7 +4017,7 @@ ALTER TABLE `education`
 -- AUTO_INCREMENT for table `favorite_members`
 --
 ALTER TABLE `favorite_members`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `gotras`
