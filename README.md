@@ -1,3 +1,75 @@
+# Matrimonial
+Description: Anything matrimonial has something to do with marriage or married people. A formal way to say "wedding," for example, would be "matrimonial event."
+
+Marriage is a matrimonial agreement or bond, and the house a newly wed couple moves into can be called a matrimonial home. Matrimonial law governs the rules of marriage — like the license that declares two people legally married, or the age a person must be, legally, to get married. Originally, matrimonial was a noun meaning "a marriage," and then "a classified ad posted by someone seeking a spouse." 
+
+Tools used: PHP7, HTML5, JavaScript (JQuery, Bootstrap), CSS3, MySQL, CodeIgniter 4
+
+
+
+
+## Running locally
+ 
+ - Create New Database (matrimonial) then import matrimonial.sql file on it.
+ - go to PATH **core/classes/connection.php** and add your database info.
+
+ ```php
+    protected static $servername = "localhost";
+    protected static $db_name="matrimonial";
+    protected static $username = "root";
+    protected static $password = "";
+```
+ then the project is ready to run in localhost!
+
+## 📷 UI
+
+
+### Index
+![Login](screenshots/login.jpg)
+![Register](screenshots/register.jpg)
+
+### admin penal
+![Home](screenshots/admin.jpg)
+
+### Dhashbord (Admin) 
+![Dhashbord1](screenshots/dhashbord1.jpg)
+
+### Dhashbord (Member)
+![Dhashbord2](screenshots/dhashbord2.jpg)
+
+### Dhashbord (Moderatros)
+![Dhashbord3](screenshots/dhashbord3.jpg)
+
+### Profile(Edit profile)
+![Profile](screenshots/profile1.jpg)
+
+![Edit Profile](screenshots/edit_profile.jpg)
+
+
+### Messages 
+![Messages](screenshots/messages.jpg)
+
+### Notifition
+![Notifition](screenshots/notif.jpg)
+
+
+### Gotras
+![Gotras](screenshots/gotras.jpg)
+
+
+### Matrial Status
+![Matrial](screenshots/matrimonial.jpg)
+
+
+### Member
+![Menber](screenshots/members.jpg)
+
+
+### Moderatros
+![Moderatros](screenshots/moderators.jpg)
+
+
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
