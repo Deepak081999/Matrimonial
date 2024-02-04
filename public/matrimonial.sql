@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 06:19 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Feb 04, 2024 at 11:32 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jangirsamaj`
+-- Database: `matrimonial`
 --
-CREATE DATABASE IF NOT EXISTS `jangirsamaj` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `jangirsamaj`;
+CREATE DATABASE IF NOT EXISTS `matrimonial` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `matrimonial`;
 
 -- --------------------------------------------------------
 
@@ -29,6 +29,7 @@ USE `jangirsamaj`;
 -- Table structure for table `districts`
 --
 
+DROP TABLE IF EXISTS `districts`;
 CREATE TABLE `districts` (
   `id` int(11) UNSIGNED NOT NULL,
   `district` varchar(25) NOT NULL,
@@ -772,6 +773,7 @@ INSERT INTO `districts` (`id`, `district`, `state_id`, `created_at`, `updated_at
 -- Table structure for table `education`
 --
 
+DROP TABLE IF EXISTS `education`;
 CREATE TABLE `education` (
   `id` int(5) UNSIGNED NOT NULL,
   `education` varchar(50) NOT NULL,
@@ -809,6 +811,7 @@ INSERT INTO `education` (`id`, `education`, `qualification`) VALUES
 -- Table structure for table `favorite_members`
 --
 
+DROP TABLE IF EXISTS `favorite_members`;
 CREATE TABLE `favorite_members` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -831,6 +834,7 @@ INSERT INTO `favorite_members` (`id`, `user_id`, `favorite_user_id`) VALUES
 -- Table structure for table `gotras`
 --
 
+DROP TABLE IF EXISTS `gotras`;
 CREATE TABLE `gotras` (
   `id` int(5) UNSIGNED NOT NULL,
   `gotra` varchar(25) NOT NULL,
@@ -3356,6 +3360,7 @@ INSERT INTO `gotras` (`id`, `gotra`, `created_at`, `updated_at`, `deleted_at`) V
 -- Table structure for table `matrimonial_msgs`
 --
 
+DROP TABLE IF EXISTS `matrimonial_msgs`;
 CREATE TABLE `matrimonial_msgs` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -3381,6 +3386,7 @@ INSERT INTO `matrimonial_msgs` (`id`, `user_id`, `contact_user_id`, `msg`, `crea
 -- Table structure for table `members_profile`
 --
 
+DROP TABLE IF EXISTS `members_profile`;
 CREATE TABLE `members_profile` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -3429,8 +3435,8 @@ CREATE TABLE `members_profile` (
 --
 
 INSERT INTO `members_profile` (`id`, `user_id`, `title_name`, `first_name`, `middle_name`, `last_name`, `phone`, `email`, `father_name`, `mother_name`, `husband_name`, `marital_status`, `self_gotra_id`, `nani_gotra_id`, `mother_gotra_id`, `dadi_gotra_id`, `availableformarriage`, `is_manglik`, `gender`, `height`, `skin`, `pob`, `dob`, `blood_group`, `education`, `qualification_id`, `occupation_id`, `occupation_detail`, `father_occupation`, `family_income`, `self_income`, `profile_photo`, `address`, `tahsil`, `district_id`, `state_id`, `created_at`, `deleted_at`, `updated_at`, `sabha_members`) VALUES
-(1, 1, '', 'Radheshyam', '', 'Jangid', 9549092111, '', 'Mangilal', '', '', 'Married', 1547, 18, 925, 114, 0, 0, 'Male', NULL, '', '', '1961-02-13', '', 'GRADUATE', 1, 95, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 1),
-(2, 2, '', 'Sulochana', '', 'Jangid', NULL, '', '', '', 'Radheshyam', 'Married', 184, NULL, 1939, 0, 0, 0, 'Female', NULL, '', '', '1963-07-01', '', 'PRIMARY', 2, 96, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 1),
+(1, 1, '', 'Admin', 'Saini', 'Jangid', 9069089045, '', 'Manilal Jangid', 'Santosh Jangid', '', 'Single', 2, 3, 6, 6, 0, 0, 'Male', 45, 'Wheatish', 'Sdf', '1990-01-14', '', 'Graduate', 4, 3, 'Developer', '', NULL, NULL, '1707032807_9572a9a47e0d68f59465.png', 'Parsrampura', 'Nawalgarh', 254, 15, '2022-01-07', NULL, '2024-02-04', 0),
+(2, 2, '', 'Sulochana', '', 'saini', NULL, '', '', '', 'Radheshyam', 'Married', 184, NULL, 1939, 0, 0, 0, 'Female', NULL, '', '', '1963-07-01', '', 'PRIMARY', 2, 96, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 1),
 (3, 3, '', 'Naveen', '', 'Jangid', NULL, '', 'Radheshyam', '', '', 'Married', 1547, 1939, 184, 925, 0, 0, 'Male', NULL, '', '', '1980-10-27', '', 'PG', 3, 97, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 0),
 (4, 4, '', 'Ajay', '', 'Jangid', NULL, '', 'Radheshyam', '', '', 'Married', 1547, 1939, 184, 925, 0, 0, 'Male', NULL, '', '', '1981-12-15', '', 'GRADUATE', 4, 97, '', '', NULL, NULL, '', '29', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 1),
 (5, 5, '', 'Anuradha', '', 'Jangid', NULL, '', '', '', 'Kanhaya lal', 'Married', 1547, 1939, 1419, 925, 0, 0, 'Female', NULL, '', '', '1983-10-10', '', 'PG', 5, 96, '', '', NULL, NULL, '', '', '', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 0),
@@ -3463,7 +3469,8 @@ INSERT INTO `members_profile` (`id`, `user_id`, `title_name`, `first_name`, `mid
 (32, 32, '', 'Usha', '', 'Jangid', NULL, '', '', '', 'Kailash', 'Married', 2506, NULL, 0, 0, 0, 0, 'Female', NULL, '', '', '1983-11-30', '', 'MATRIC', 8, 96, '', '', NULL, NULL, '', '28', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 0),
 (33, 33, '', 'Khushi', '', 'Jangid', NULL, '', 'Kailash', '', '', 'Bachlor', 1547, NULL, 2506, 633, 1, 0, 'Female', NULL, '', '', '2002-04-17', '', 'UNDER MATRIC', 18, 1, '', '', NULL, NULL, '', '28', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 0),
 (34, 34, '', 'Hani', '', 'Jangid', NULL, '', 'Kailash', '', '', 'Bachlor', 1547, NULL, 2506, 633, 0, 0, 'Female', NULL, '', '', '2008-08-01', '', 'LITERATE', 19, 1, '', '', NULL, NULL, '', '28', 'Lachhmangarh', NULL, NULL, '2022-01-07', NULL, '2022-01-07', 0),
-(35, 35, '', 'Arvind', 'Kumar', 'Jangid', 9782447604, '', 'Manilal Jangid', 'Santosh Jangid', '', 'Single', 2, 3, 6, 6, 0, 0, 'Male', 45, 'Wheatish', 'Sdf', '1990-01-14', '', 'Graduate', 4, 3, 'Developer', '', NULL, NULL, '1641559160_3c4d2ea36ee0ca4d0702.png', 'Parsrampura', 'Nawalgarh', 254, 15, '2022-01-07', NULL, '2022-01-10', 0);
+(35, 35, '', 'Arvind', 'Kumar', 'Saini', 9782447604, '', 'Manilal Jangid', 'Santosh Jangid', '', 'Single', 2, 3, 6, 6, 0, 0, 'Male', 45, 'Wheatish', 'Sdf', '1990-01-14', '', 'Graduate', 4, 3, 'Developer', '', NULL, NULL, '1707033180_44aa97141a9ee8f3057b.jpg', 'Parsrampura', 'Nawalgarh', 254, 15, '2022-01-07', '2024-02-04', '2024-02-04', 0),
+(36, 35, '', 'Arvind', 'Kumar', 'Saini', 9782447604, '', 'Manilal Jangid', 'Santosh Jangid', '', 'Single', 2, 3, 6, 6, 0, 0, 'Male', 45, 'Wheatish', 'Sdf', '1990-01-14', '', 'Graduate', 4, 3, 'Developer', '', NULL, NULL, '1707033180_44aa97141a9ee8f3057b.jpg', 'Parsrampura', 'Nawalgarh', 254, 15, '2022-01-07', NULL, '2024-02-04', 0);
 
 -- --------------------------------------------------------
 
@@ -3471,6 +3478,7 @@ INSERT INTO `members_profile` (`id`, `user_id`, `title_name`, `first_name`, `mid
 -- Table structure for table `occupations`
 --
 
+DROP TABLE IF EXISTS `occupations`;
 CREATE TABLE `occupations` (
   `id` int(5) UNSIGNED NOT NULL,
   `occupation` varchar(50) NOT NULL,
@@ -3502,6 +3510,7 @@ INSERT INTO `occupations` (`id`, `occupation`, `created_at`) VALUES
 -- Table structure for table `otp`
 --
 
+DROP TABLE IF EXISTS `otp`;
 CREATE TABLE `otp` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -3514,7 +3523,6 @@ CREATE TABLE `otp` (
 --
 
 INSERT INTO `otp` (`id`, `user_id`, `otp`, `created_at`) VALUES
-(1, 1, 955418, '1643359211'),
 (3, 3, 201448, '1639633867'),
 (4, 4, 871706, '1639634137'),
 (5, 5, 973823, '1639635117'),
@@ -3536,6 +3544,7 @@ INSERT INTO `otp` (`id`, `user_id`, `otp`, `created_at`) VALUES
 -- Table structure for table `permissions`
 --
 
+DROP TABLE IF EXISTS `permissions`;
 CREATE TABLE `permissions` (
   `id` int(5) UNSIGNED NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -3558,6 +3567,7 @@ INSERT INTO `permissions` (`id`, `title`, `description`, `created_at`, `updated_
 -- Table structure for table `relations`
 --
 
+DROP TABLE IF EXISTS `relations`;
 CREATE TABLE `relations` (
   `id` tinyint(6) UNSIGNED NOT NULL,
   `relation` varchar(20) NOT NULL,
@@ -3586,6 +3596,7 @@ INSERT INTO `relations` (`id`, `relation`, `created_at`, `updated_at`, `deleted_
 -- Table structure for table `roles`
 --
 
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` tinyint(2) UNSIGNED NOT NULL,
   `role` varchar(20) NOT NULL
@@ -3606,6 +3617,7 @@ INSERT INTO `roles` (`id`, `role`) VALUES
 -- Table structure for table `role_permissions`
 --
 
+DROP TABLE IF EXISTS `role_permissions`;
 CREATE TABLE `role_permissions` (
   `id` int(11) UNSIGNED NOT NULL,
   `role_id` tinyint(2) UNSIGNED NOT NULL,
@@ -3619,7 +3631,7 @@ CREATE TABLE `role_permissions` (
 INSERT INTO `role_permissions` (`id`, `role_id`, `permission_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(3, 2, 2);
+(3, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -3627,6 +3639,7 @@ INSERT INTO `role_permissions` (`id`, `role_id`, `permission_id`) VALUES
 -- Table structure for table `states`
 --
 
+DROP TABLE IF EXISTS `states`;
 CREATE TABLE `states` (
   `id` tinyint(2) UNSIGNED NOT NULL,
   `state` varchar(15) NOT NULL,
@@ -3682,6 +3695,7 @@ INSERT INTO `states` (`id`, `state`, `created_at`, `updated_at`, `deleted_at`) V
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) UNSIGNED NOT NULL,
   `first_name` varchar(20) NOT NULL,
@@ -3699,7 +3713,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `phone`, `password`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Radheshyam', 'Jangid', 9602065384, 'e30917419308490a826ea4ee2406f11d', 0, '2022-01-07', '2022-01-28', NULL),
+(1, 'admin', 'Jangid', 9602065385, 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, '2024-02-04', NULL),
 (2, 'Sulochana', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
 (3, 'Naveen', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
 (4, 'Ajay', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
@@ -3733,7 +3747,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `phone`, `password`, `stat
 (32, 'Usha', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
 (33, 'Khushi', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
 (34, 'Hani', 'Jangid', 0, NULL, 0, '2022-01-07', '2022-01-07', NULL),
-(35, 'Arvind', 'Jangid', 9602065385, 'e10adc3949ba59abbe56e057f20f883e', 1, '2022-01-07', '2022-01-10', NULL);
+(35, 'Arvind', 'saini', 9602065385, 'e10adc3949ba59abbe56e057f20f883e', 1, '2022-01-07', '2024-02-04', '2024-02-04');
 
 -- --------------------------------------------------------
 
@@ -3741,6 +3755,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `phone`, `password`, `stat
 -- Table structure for table `users_business`
 --
 
+DROP TABLE IF EXISTS `users_business`;
 CREATE TABLE `users_business` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -3767,6 +3782,7 @@ INSERT INTO `users_business` (`id`, `user_id`, `proprietary_name`, `business`, `
 -- Table structure for table `user_relatives`
 --
 
+DROP TABLE IF EXISTS `user_relatives`;
 CREATE TABLE `user_relatives` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -3820,6 +3836,7 @@ INSERT INTO `user_relatives` (`id`, `user_id`, `relative_user_id`, `relation_id`
 -- Table structure for table `user_roles`
 --
 
+DROP TABLE IF EXISTS `user_roles`;
 CREATE TABLE `user_roles` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
@@ -3831,9 +3848,9 @@ CREATE TABLE `user_roles` (
 --
 
 INSERT INTO `user_roles` (`id`, `user_id`, `role_id`) VALUES
-(1, 1, 3),
-(2, 2, 3),
-(3, 3, 3),
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
 (4, 4, 3),
 (5, 5, 3),
 (6, 6, 3),
@@ -4016,7 +4033,7 @@ ALTER TABLE `matrimonial_msgs`
 -- AUTO_INCREMENT for table `members_profile`
 --
 ALTER TABLE `members_profile`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `occupations`
