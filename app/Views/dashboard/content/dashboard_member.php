@@ -8,7 +8,7 @@ echo view('dashboard/sidebar/sidebar_member');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h2 class="fw-lighter">Dashboard</h2>
+                    <h2 class="fw-lighter">Member Dashboard</h2>
                 </div>
                 <div class="col-sm-6 text-end">
                     <!--  -->
